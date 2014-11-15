@@ -22,3 +22,31 @@ var TabletRenderer = function() {
       '';
   };
 };
+
+var MobileRenderer = function () {
+
+  this.renderHeader = function () {
+    return '' +
+      '<div class="circles-header-column">配置</div>' +
+      '<div class="circles-header-column">サークル名 / ペンネーム</div>' +
+      ''
+      ;
+  };
+
+  this.renderCircle = function(circle) {
+    var hasHomepage = circle.circle_url != '';
+    var linkStart = hasHomepage ? '<a target="_blank" href="' + circle.circle_url + '">' : '';
+    var linkEnd = hasHomepage ? '</a>' : '';
+    var homepageIcon = hasHomepage ? '<div class="circle-url-mobile">【HP】</div>' : '';
+    return '' +
+      '<div id="circle-' + circle.id + '" class="circle-body-row">' +
+        '<div class="circle-space circle-body-column">' + circle.space + '</div>' +
+        '<div class="circle-name circle-body-column">' + linkStart +
+          '<div>' + circle.circle_name + '</div>' +
+          homepageIcon +
+          '<div>' + circle.pen_name + '</div>' +
+        linkEnd + '</div>' +
+      '</div>' +
+      '';
+  };
+};
