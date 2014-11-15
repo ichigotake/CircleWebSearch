@@ -1,0 +1,22 @@
+{
+  "name": "CircleWebSearch",
+  "version": "0.1.0",
+  "authors": [
+    "ichigotake <ichigotake.san@gmail.com>"
+  ],
+  "description": "Incremental search application for participate in the \\\"Sunshine Creation\\\" circles.",
+  "main": "src/app.js",
+  "license": "MIT",
+  "homepage": "http://github.com/ichigotake/CircleWebSearch.git",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "rxjs": "~2.3.16"
+  }
+}

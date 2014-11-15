@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#toolbar {
+  position: fixed;
+    top: 0;
+  background: #8BC34A;
+  width: 100%;
+  padding: 8px 16px;
+  z-index: 100;
+}
+
+#toolbar-label {
+  margin: 0;
+  white-space: nowrap;
+}
+
+/** search form */
+
+#header {
+  position: fixed;
+    top: 0;
+  width: 100%;
+  padding-top: 72px;
+  background: #ffffff;
+  /* box-shadow */
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.2s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+#circles-search-form-keyword {
+  width: 320px;
+  margin-right: 8px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+#event-site-link {
+  position: absolute;
+    right: 16px;
+    top: 72px;
+}
+
+/** circles */
+
+#circles {
+  background: #ffffff;
+  margin-top: 124px;
+  margin-right: auto;
+  margin-bottom: 48px;
+  margin-left: auto;
+  width: 98%;
+  height: 100%;
+  border-collapse: collapse;
+}
+
+tr,th,td {
+  padding: 2px 4px 2px 4px;
+  border: 1px #607D8B solid;
+}
+
+#circles-header-row {
+  /** jsで動的に可視化する */
+  display: none;
+}
+
+/** circles body */
+
+.circle-space {
+  white-space: nowrap;
+}
+
+.circle-pen-name {
+  white-space: nowrap;
+}
+
+.circle-url a {
+  display: block;
+}
