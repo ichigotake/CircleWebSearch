@@ -9,14 +9,13 @@ $(document).ready(function(){
     renderer = new MobileRenderer();
   }
 
-  var $circlesBody = $('#circles');
+  var $circles = $('#circles');
   var $circlesBodyRows = [];
 
-  for (var i in circles) {
-    var c = circles[i];
-    $circlesBody.append(renderer.renderCircle(c));
-    $circlesBodyRows[c.id] = $('#circle-' + c.id);
-  }
+  circles.forEach(function(circle, index) {
+    $circles.append(renderer.renderCircle(circle));
+    $circlesBodyRows[circle.id] = $('#circle-' + circle.id);
+  });
 
   var $toolbar = $('#toolbar');
   var $circlesHeader = $('#circles-header-row');
@@ -42,12 +41,10 @@ $(document).ready(function(){
     .distinctUntilChanged()
     .throttleWithTimeout(300)
     .subscribe(function(keyword){
-      console.log(keyword);
-      for (var i in circles) {
-        var c = circles[i];
-        var displayed = c.pen_name.indexOf(keyword) >= 0 || c.circle_name.indexOf(keyword) >= 0;
-        $circlesBodyRows[c.id].css('display', displayed ? 'table-row' : 'none');
-      }
+      circles.forEach(function(circle, index){
+        var displayed = circle.pen_name.indexOf(keyword) >= 0 || circle.circle_name.indexOf(keyword) >= 0;
+        $circlesBodyRows[circle.id].css('display', displayed ? 'table-row' : 'none');
+      });
     });
 
 });
