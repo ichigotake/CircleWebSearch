@@ -49,23 +49,38 @@ body {
 
 #circles {
   background: #ffffff;
+  width: 98%;
   margin-top: 124px;
   margin-right: auto;
   margin-bottom: 48px;
   margin-left: auto;
-  width: 98%;
-  height: 100%;
   border-collapse: collapse;
 }
 
-tr,th,td {
+#circles-header-row {
+  padding: 2px 4px 2px 4px;
+  border: 1px #607D8B solid;
+  /** jsで動的に可視化する */
+  display: none;
+}
+
+.circles-header-column {
+  display: table-cell;
+  font-weight: bold;
   padding: 2px 4px 2px 4px;
   border: 1px #607D8B solid;
 }
 
-#circles-header-row {
-  /** jsで動的に可視化する */
-  display: none;
+.circle-body-row {
+  display: table-row;
+  padding: 2px 4px 2px 4px;
+  border: 1px #607D8B solid;
+}
+
+.circle-body-column {
+  display: table-cell;
+  padding: 2px 4px 2px 4px;
+  border: 1px #607D8B solid;
 }
 
 /** circles body */

@@ -1,17 +1,18 @@
 
 $(document).ready(function(){
 
-  var $circlesBody = $('#circles-body');
+  var $circlesBody = $('#circles');
   var $circlesBodyRows = [];
 
   for (var i in circles) {
     var c = circles[i];
-    $circlesBody.append('<tr id="circle-' + c.id + '">' +
-      '<td class="circle-space">' + c.space + '</td>' +
-      '<td class="circle-pen-name">' + c.pen_name + '</td>' +
-      '<td class="circle-name">' + c.circle_name + '</td>' +
-      '<td class="circle-url"><a target="_blank" href="' + c.circle_url + '">' + c.circle_url + '</a></td>' +
-      '</tr>');
+    $circlesBody.append(
+        '<div id="circle-' + c.id + '" class="circle-body-row">' +
+          '<div class="circle-space circle-body-column">' + c.space + '</div>' +
+          '<div class="circle-pen-name circle-body-column">' + c.pen_name + '</div>' +
+          '<div class="circle-name circle-body-column">' + c.circle_name + '</div>' +
+          '<div class="circle-url circle-body-column"><a target="_blank" href="' + c.circle_url + '">' + c.circle_url + '</a></div>' +
+        '</div>');
     $circlesBodyRows[c.id] = $('#circle-' + c.id);
   }
 
