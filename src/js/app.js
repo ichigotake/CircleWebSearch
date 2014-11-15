@@ -27,14 +27,16 @@ $(document).ready(function(){
   $searchKeyword.keypress(function(e){
     return !((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13));  });
 
-  $searchKeyword.focus(function () {
-    $header.css('top', 0);
-    $circles.css('margin-top', parseInt($circles.css('margin-top')) - $header.height());
-  });
-  $searchKeyword.blur(function () {
-    $header.css('top', $toolbar.height());
-    $circles.css('margin-top', parseInt($circles.css('margin-top')) + $header.height());
-  });
+  if (!isTablet) {
+    $searchKeyword.focus(function () {
+      $header.css('top', 0);
+      $circles.css('margin-top', parseInt($circles.css('margin-top')) - $header.height());
+    });
+    $searchKeyword.blur(function () {
+      $header.css('top', $toolbar.height());
+      $circles.css('margin-top', parseInt($circles.css('margin-top')) + $header.height());
+    });
+  }
 
   Rx.Observable.fromEvent($searchKeyword, 'keyup')
     .map(function(e){ return e.target.value; })

@@ -1,5 +1,9 @@
 # ChangeLog
 
+## {NEXT_VERSION}
+
+- Fix toolbar visible control on tablet
+
 ## v0.2.0
 
 - Add smartphone support
