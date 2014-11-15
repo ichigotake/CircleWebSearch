@@ -12,9 +12,11 @@ $(document).ready(function(){
   var $circles = $('#circles');
   var $circlesBodyRows = [];
 
+  var zebraStriped = new ZebraStriped();
   circles.forEach(function(circle, index) {
     $circles.append(renderer.renderCircle(circle));
     $circlesBodyRows[circle.id] = $('#circle-' + circle.id);
+    zebraStriped.apply($circlesBodyRows[circle.id]);
   });
 
   var $toolbar = $('#toolbar');
@@ -43,9 +45,13 @@ $(document).ready(function(){
     .distinctUntilChanged()
     .throttleWithTimeout(300)
     .subscribe(function(keyword){
+      var zebraStriped = new ZebraStriped();
       circles.forEach(function(circle, index){
         var displayed = circle.pen_name.indexOf(keyword) >= 0 || circle.circle_name.indexOf(keyword) >= 0;
         $circlesBodyRows[circle.id].css('display', displayed ? 'table-row' : 'none');
+        if (displayed) {
+          zebraStriped.apply($circlesBodyRows[circle.id]);
+        }
       });
     });
 

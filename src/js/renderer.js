@@ -50,3 +50,18 @@ var MobileRenderer = function () {
       '';
   };
 };
+
+var ZebraStriped = function(){
+
+  var index = 0;
+
+  this.apply = function (obj) {
+    if (index % 2 == 0) {
+      obj.addClass('zebra-striped');
+    } else {
+      obj.removeClass('zebra-striped');
+    }
+    index++;
+  };
+
+};

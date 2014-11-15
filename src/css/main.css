@@ -67,11 +67,12 @@ body {
   margin-bottom: 48px;
   margin-left: auto;
   display: table;
+  border: 1px #9E9E9E solid;
 }
 
 #circles-header-row {
   padding: 2px 4px 2px 4px;
-  border: 1px #607D8B solid;
+  border: 1px #9E9E9E solid;
   /** jsで動的に可視化する */
   display: none;
 }
@@ -80,13 +81,13 @@ body {
   display: table-cell;
   font-weight: bold;
   padding: 2px 4px 2px 4px;
-  border: 1px #607D8B solid;
+  border: 1px #9E9E9E solid;
 }
 
 .circle-body-row {
   display: table-row;
   padding: 2px 4px 2px 4px;
-  border: 1px #607D8B solid;
+  border: 1px #9E9E9E solid;
 }
 
 .circle-body-row a {
@@ -96,18 +97,24 @@ body {
 .circle-body-column {
   display: table-cell;
   padding: 2px 4px 2px 4px;
-  border: 1px #607D8B solid;
+  border: 1px #9E9E9E solid;
 }
 
 /** circles body */
 
 .circle-space {
   white-space: nowrap;
+  text-align: center;
   vertical-align: middle;
+  width: 48px;
 }
 
 .circle-pen-name {
   white-space: nowrap;
+}
+
+.zebra-striped {
+  background: #EEEEEE;
 }
 
 /** circle body for mobile */
