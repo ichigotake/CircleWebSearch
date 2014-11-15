@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
   var renderer;
-  var isTablet = window.innerWidth > 480;
+  var isTablet = window.innerWidth > 800;
   if (isTablet) {
     renderer = new TabletRenderer();
   } else {
