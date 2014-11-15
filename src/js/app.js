@@ -1,27 +1,27 @@
 
 $(document).ready(function(){
 
+  var renderer;
+//  TODO:
+//  if (window.innerWidth > 490) {
+    renderer = new TabletRenderer();
+//  } else {
+//    renderer = new MobileRenderer();
+//  }
+
+
   var $circlesBody = $('#circles');
   var $circlesBodyRows = [];
 
   for (var i in circles) {
     var c = circles[i];
-    $circlesBody.append(
-        '<div id="circle-' + c.id + '" class="circle-body-row">' +
-          '<div class="circle-space circle-body-column">' + c.space + '</div>' +
-          '<div class="circle-pen-name circle-body-column">' + c.pen_name + '</div>' +
-          '<div class="circle-name circle-body-column">' + c.circle_name + '</div>' +
-          '<div class="circle-url circle-body-column"><a target="_blank" href="' + c.circle_url + '">' + c.circle_url + '</a></div>' +
-        '</div>');
+    $circlesBody.append(renderer.renderCircle(c));
     $circlesBodyRows[c.id] = $('#circle-' + c.id);
   }
 
   var $circlesHeader = $('#circles-header-row');
+  $circlesHeader.append(renderer.renderHeader());
   $circlesHeader.css('display', 'table-row');
-  $circlesHeader.find('th').each(function(i, val){
-    var $row = $(val);
-    $row.css('width', $row.css('width'));
-  });
 
   var $searchKeyword = $('#circles-search-form-keyword');
   $searchKeyword.keypress(function(e){
