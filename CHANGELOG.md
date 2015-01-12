@@ -2,6 +2,8 @@
 
 ## {NEXT_VERSION}
 
+- Fix invalid circle url, twitter and pixiv
+
 ## v0.3.0
 
 - SunchineCreation 2015 Winter
