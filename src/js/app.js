@@ -47,7 +47,8 @@ $(document).ready(function(){
     .subscribe(function(keyword){
       var zebraStriped = new ZebraStriped();
       circles.forEach(function(circle, index){
-        var displayed = circle.pen_name.indexOf(keyword) >= 0 || circle.circle_name.indexOf(keyword) >= 0;
+        var displayed = circle.pen_name.toLowerCase().indexOf(keyword) >= 0
+          || circle.circle_name.toLowerCase().indexOf(keyword) >= 0;
         $circlesBodyRows[circle.id].css('display', displayed ? 'table-row' : 'none');
         if (displayed) {
           zebraStriped.apply($circlesBodyRows[circle.id]);
