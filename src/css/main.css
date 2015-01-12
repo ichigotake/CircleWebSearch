@@ -117,6 +117,10 @@ body {
   background: #EEEEEE;
 }
 
+.circle-url a {
+  display: block;
+}
+
 /** circle body for mobile */
 .circle-url-mobile {
   float: right;
