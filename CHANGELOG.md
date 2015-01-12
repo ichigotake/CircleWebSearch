@@ -2,7 +2,11 @@
 
 ## {NEXT_VERSION}
 
+## v0.3.0
+
+- SunchineCreation 2015 Winter
 - Fix toolbar visible control on tablet
+- Find with match case
 
 ## v0.2.0
 
